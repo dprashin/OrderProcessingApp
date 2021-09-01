@@ -4,14 +4,16 @@ using Xunit;
 
 namespace OrderProcessingAppTests {
     public class OrderProcessorTest {
-        [Fact]
-        public void PaymentProcesser_Should_Generate_Packing_Slip() {
+        [Theory]
+        [InlineData("Physical")]
+        public void PaymentProcesser_Should_Generate_Packing_Slip(string paymentType) {
             //Arrange
             OrderProcessor orderProcessor = new OrderProcessor();
-            PhysicalProduct physicalProduct = new PhysicalProduct() { Name = "Football", Price = 233.2, PaymentType = "Physical" };
+            PhysicalProduct physicalProduct = new PhysicalProduct() { Name = "Football", Price = 233.2};
+            physicalProduct.PaymentType = paymentType;
 
             string expected = "Generating a packing slip for physical product.";
-
+ 
             //Act
             string actual = orderProcessor.ProcessPayment(physicalProduct);
 
