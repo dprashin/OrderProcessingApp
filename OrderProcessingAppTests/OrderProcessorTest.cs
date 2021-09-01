@@ -7,49 +7,49 @@ namespace OrderProcessingAppTests {
         [Fact]
         public void PaymentProcesser_Should_Generate_Packing_Slip_For_Physical_Payment() {
             //Arrange
-            OrderProcessor orderProcessor = new OrderProcessor();
-            Product physicalProduct = new Product() { Name = "Football", Price = 233.2};
-            physicalProduct.PaymentType = PaymentTypes.Physical;
+            PhysicalProduct physicalProduct = new PhysicalProduct { Name = "Football", Price = 500 };
+           
 
-            string expected = "Generating a packing slip for physical product.";
- 
-            //Act
-            string actual = orderProcessor.ProcessPayment(physicalProduct);
+
+            string expected = "Generating a packing slip for - Football.";
 
             //Act
-            Assert.Equal(expected, actual);
-        }
-
-        [Fact]
-        public void PaymentProcesser_Should_Generate_Packing_Slip_For_Book_Payment() {
-            //Arrange
-            OrderProcessor orderProcessor = new OrderProcessor();
-            Product bookProduct = new Product() { Name = "Harry Porter", Price = 633.4 };
-            bookProduct.PaymentType = PaymentTypes.Book;
-
-            string expected = "Generating a duplicate packing slip for the royalty department.";
-
-            //Act
-            string actual = orderProcessor.ProcessPayment(bookProduct);
+            string actual = physicalProduct.PaymentProcessor.ProcessPayment(physicalProduct);
 
             //Act
             Assert.Equal(expected, actual);
         }
 
-        [Fact]
-        public void PaymentProcesser_Should_Generate_Packing_Slip_For_Membersip_Payment() {
-            //Arrange
-            OrderProcessor orderProcessor = new OrderProcessor();
-            Product membershipPayment = new Product() { Name = "Fitness", Price = 228 };
-            membershipPayment.PaymentType = PaymentTypes.Membership;
+        //[Fact]
+        //public void PaymentProcesser_Should_Generate_Packing_Slip_For_Book_Payment() {
+        //    //Arrange
+        //    PhysicalOrderProcessor orderProcessor = new PhysicalOrderProcessor();
+        //    PhysicalProduct bookProduct = new PhysicalProduct() { Name = "Harry Porter", Price = 633.4 };
+           
 
-            string expected = "Activating membership.";
+        //    string expected = "Generating a duplicate packing slip for the royalty department.";
 
-            //Act
-            string actual = orderProcessor.ProcessPayment(membershipPayment);
+        //    //Act
+        //    string actual = orderProcessor.ProcessPayment(bookProduct);
 
-            //Act
-            Assert.Equal(expected, actual);
-        }
+        //    //Act
+        //    Assert.Equal(expected, actual);
+        //}
+
+        //[Fact]
+        //public void PaymentProcesser_Should_Generate_Packing_Slip_For_Membersip_Payment() {
+        //    //Arrange
+        //    PhysicalOrderProcessor orderProcessor = new PhysicalOrderProcessor();
+        //    PhysicalProduct membershipPayment = new PhysicalProduct() { Name = "Fitness", Price = 228 };
+   
+
+        //    string expected = "Activating membership.";
+
+        //    //Act
+        //    string actual = orderProcessor.ProcessPayment(membershipPayment);
+
+        //    //Act
+        //    Assert.Equal(expected, actual);
+        //}
     }
 }
