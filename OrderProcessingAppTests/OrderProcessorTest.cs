@@ -24,10 +24,26 @@ namespace OrderProcessingAppTests {
         public void PaymentProcesser_Should_Generate_Packing_Slip_For_Book_Payment() {
             //Arrange
             OrderProcessor orderProcessor = new OrderProcessor();
-            Product bookProduct = new Product() { Name = "Football", Price = 633.4 };
+            Product bookProduct = new Product() { Name = "Harry Porter", Price = 633.4 };
             bookProduct.PaymentType = PaymentTypes.Book;
 
-            string expected = "Generating a packing slip for book product.";
+            string expected = "Generating a duplicate packing slip for the royalty department.";
+
+            //Act
+            string actual = orderProcessor.ProcessPayment(bookProduct);
+
+            //Act
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void PaymentProcesser_Should_Generate_Packing_Slip_For_Membersip_Payment() {
+            //Arrange
+            OrderProcessor orderProcessor = new OrderProcessor();
+            Product bookProduct = new Product() { Name = "Fitness", Price = 228 };
+            bookProduct.PaymentType = PaymentTypes.Membership;
+
+            string expected = "Activating membership.";
 
             //Act
             string actual = orderProcessor.ProcessPayment(bookProduct);
