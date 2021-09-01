@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace OrderProcessingApp {
-    public class Product {
+    public class PhysicalProduct : IProduct {
         public string Name { get; set; }
         public double Price { get; set; }
-        public PaymentTypes PaymentType { get; set; }
+        public IOrderProcessor PaymentProcessor { get; set; } = new PhysicalOrderProcessor();
     }
 }
