@@ -6,7 +6,7 @@ namespace OrderProcessingAppTests {
     public class OrderProcessorTest {
         [Theory]
         [InlineData("Physical")]
-        public void PaymentProcesser_Should_Generate_Packing_Slip(string paymentType) {
+        public void PaymentProcesser_Should_Generate_Packing_Slip_For_Physical_Payment(string paymentType) {
             //Arrange
             OrderProcessor orderProcessor = new OrderProcessor();
             PhysicalProduct physicalProduct = new PhysicalProduct() { Name = "Football", Price = 233.2};
