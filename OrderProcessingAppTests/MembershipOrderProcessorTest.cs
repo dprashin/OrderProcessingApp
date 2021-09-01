@@ -7,7 +7,7 @@ using Xunit;
 namespace OrderProcessingAppTests {
     public class MembershipOrderProcessorTest {
         [Fact]
-        public void PaymentProcesser_Should_Activate_Membership_Membership_Payment() {
+        public void PaymentProcesser_Should_Activate_Membership_For_Membership_Payment() {
             //Arrange
             Membership membershipPayment = new Membership() { Name = "Fitness", Price = 150 };
 
