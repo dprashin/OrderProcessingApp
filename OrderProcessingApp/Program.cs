@@ -13,6 +13,10 @@ namespace OrderProcessingApp {
             string bookPaymentMessage = bookProduct.PaymentProcessor.ProcessPayment(bookProduct);
             Console.WriteLine(bookPaymentMessage + "\n");
             Console.WriteLine("Book payment- commission amount to the agent: " + bookProduct.CommissionCalculator.CalculateCommission(bookProduct, 20) + ".\n");
+            
+            Membership membership = new Membership { Name = "Fitness", Price = 226 };
+            string membershipMessage = membership.PaymentProcessor.ProcessPayment(membership);
+            Console.WriteLine(membershipMessage + "\n");
         }
     }
 }
