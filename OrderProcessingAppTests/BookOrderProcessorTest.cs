@@ -6,7 +6,7 @@ using System.Text;
 using Xunit;
 
 namespace OrderProcessingAppTests {
-    public class BookOrderProcessorTests {
+    public class BookOrderProcessorTest {
         [Fact]
         public void PaymentProcesser_Should_Generate_Packing_Slip_For_Book_Payment() {
             //Arrange
