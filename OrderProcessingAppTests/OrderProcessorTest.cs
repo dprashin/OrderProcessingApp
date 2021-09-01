@@ -40,13 +40,13 @@ namespace OrderProcessingAppTests {
         public void PaymentProcesser_Should_Generate_Packing_Slip_For_Membersip_Payment() {
             //Arrange
             OrderProcessor orderProcessor = new OrderProcessor();
-            Product bookProduct = new Product() { Name = "Fitness", Price = 228 };
-            bookProduct.PaymentType = PaymentTypes.Membership;
+            Product membershipPayment = new Product() { Name = "Fitness", Price = 228 };
+            membershipPayment.PaymentType = PaymentTypes.Membership;
 
             string expected = "Activating membership.";
 
             //Act
-            string actual = orderProcessor.ProcessPayment(bookProduct);
+            string actual = orderProcessor.ProcessPayment(membershipPayment);
 
             //Act
             Assert.Equal(expected, actual);
