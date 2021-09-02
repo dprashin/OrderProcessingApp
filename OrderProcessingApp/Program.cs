@@ -19,13 +19,10 @@ namespace OrderProcessingApp {
             Membership membership = new Membership { Name = "Fitness", Price = 226 };
             string membershipMessage = membership.PaymentProcessor.ProcessPayment(membership);
             Console.WriteLine(membershipMessage + "\n");
-            Console.WriteLine(membership.EmailSender.SendEmail($"Email confirmation: your membership is activated for - {membership.Name}.\n"));
-
 
             MembershipUpgrade membershipUpgrade = new MembershipUpgrade { Name = "LinkedIn", Price = 333 };
             string membershipUpgradeMessage = membershipUpgrade.PaymentProcessor.ProcessPayment(membershipUpgrade);
             Console.WriteLine(membershipUpgradeMessage + "\n");
-            Console.WriteLine(membershipUpgrade.EmailSender.SendEmail($"Email confirmation: your membership is upgraded for - {membership.Name}.\n"));
         }
     }
 }

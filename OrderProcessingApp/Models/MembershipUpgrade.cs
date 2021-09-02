@@ -9,6 +9,5 @@ namespace OrderProcessingApp.Models {
         public double Price { get; set; }
         public int MembershipNumber { get; set; }
         public IOrderProcessor PaymentProcessor { get; set; } = new MembershipUpgradeOrderProcessor();
-        public IEmailSender EmailSender { get; set; } = new EmailSender();
     }
 }
