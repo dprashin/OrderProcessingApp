@@ -11,7 +11,7 @@ namespace OrderProcessingAppTests {
             //Arrange
             MembershipUpgrade membershipUpgrade = new MembershipUpgrade() { Name = "LinkedIn", Price = 200, MembershipNumber = 101 };
 
-            string expected = "Your memberhip is upgraded for - LinkedIn.";
+            string expected = "Email confirmation:  Your memberhip is upgraded for - LinkedIn.";
 
             //Act
             string actual = membershipUpgrade.PaymentProcessor.ProcessPayment(membershipUpgrade);

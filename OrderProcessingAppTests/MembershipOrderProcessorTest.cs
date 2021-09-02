@@ -11,7 +11,7 @@ namespace OrderProcessingAppTests {
             //Arrange
             Membership membershipPayment = new Membership() { Name = "Fitness", Price = 150 };
 
-            string expected = "Your memberhip is activated for - Fitness.";
+            string expected = "Email confirmation:  Your memberhip is activated for - Fitness.";
 
             //Act
             string actual = membershipPayment.PaymentProcessor.ProcessPayment(membershipPayment);
