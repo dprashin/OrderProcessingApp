@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OrderProcessingApp.Email;
+using System;
 using System.Collections.Generic;
 using System.Text;
 

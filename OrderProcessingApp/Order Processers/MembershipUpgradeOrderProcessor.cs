@@ -1,7 +1,10 @@
-﻿namespace OrderProcessingApp.Models {
-    public class MembershipUpgradeOrderProcessor : IOrderProcessor {
+﻿using OrderProcessingApp.Email;
+
+namespace OrderProcessingApp.Models {
+    public class MembershipUpgradeOrderProcessor : EmailSender, IOrderProcessor {
         public string ProcessPayment(IProduct product) {
-            return $"Your memberhip is upgraded for - {product.Name}.";
+            string emailConfirmation = SendEmail("Email confirmation: ");
+            return $"{emailConfirmation} Your memberhip is upgraded for - {product.Name}.";
         }
     }
 }
