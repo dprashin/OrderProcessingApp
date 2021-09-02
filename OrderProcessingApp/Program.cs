@@ -11,10 +11,10 @@ namespace OrderProcessingApp {
             Console.WriteLine(physicalPaymentMessage + "\n");
             Console.WriteLine("Physical payment - commission amount to the agent: " + physicalProduct.CommissionCalculator.CalculateCommission(physicalProduct, 10) + ".\n");
 
-            Book bookProduct = new Book { Name = "Harry Porter", Price = 336 };
+            BookProduct bookProduct = new BookProduct { Name = "Harry Porter", Price = 336 };
             string bookPaymentMessage = bookProduct.PaymentProcessor.ProcessPayment(bookProduct);
             Console.WriteLine(bookPaymentMessage + "\n");
-            Console.WriteLine("Book payment- commission amount to the agent: " + bookProduct.CommissionCalculator.CalculateCommission(bookProduct, 20) + ".\n");
+            Console.WriteLine("BookProduct payment- commission amount to the agent: " + bookProduct.CommissionCalculator.CalculateCommission(bookProduct, 20) + ".\n");
             
             Membership membership = new Membership { Name = "Fitness", Price = 226 };
             string membershipMessage = membership.PaymentProcessor.ProcessPayment(membership);
